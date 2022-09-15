@@ -1,4 +1,4 @@
-package com.example.beneduca
+package com.beneduca.beneduca
 
 import io.flutter.embedding.android.FlutterActivity
 
