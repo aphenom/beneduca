@@ -1,8 +1,10 @@
+import 'package:beneduca/member_concours.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:beneduca/member_quiz.dart';
 import 'package:beneduca/member_recompenses.dart';
 import 'package:beneduca/_navbar_member.dart';
+import 'package:beneduca/_data.dart';
 
 class ScreenMember extends StatefulWidget {
   const ScreenMember({Key? key}) : super(key: key);
@@ -20,9 +22,10 @@ class _ScreenMemberState extends State<ScreenMember> {
 
   @override
   Widget build(BuildContext context) {
+    String _semaine = semaine();
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Beneduca"),
+        title: const Text("Tableau de bord - Beneduca"),
         backgroundColor: Colors.amber,
       ),
       body: Center(
@@ -42,6 +45,9 @@ class _ScreenMemberState extends State<ScreenMember> {
                     fit: BoxFit.cover,
                   ),
                 ),
+              ),
+              SizedBox(
+                height: 20,
               ),
               Flexible(
                 flex: 1,
@@ -129,8 +135,8 @@ class _ScreenMemberState extends State<ScreenMember> {
                               builder: (_) =>
                                   ScreenMemberQuiz())); // Perform some action
                         },
-                        child: const Text(
-                            'Réaliser le concours de la semaine du 12-09-2022',
+                        child: Text(
+                            'Réaliser le concours de la semaine du $_semaine',
                             style: TextStyle(color: Colors.white)),
                       ),
                     ],
@@ -173,7 +179,7 @@ class _ScreenMemberState extends State<ScreenMember> {
                               onPressed: () {
                                 Navigator.of(context).push(MaterialPageRoute(
                                     builder: (_) =>
-                                        ScreenMemberRecompenses())); // Perform some action
+                                        ScreenMemberConcours())); // Perform some action
                               },
                               child: const Text(
                                 '7',

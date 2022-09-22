@@ -23,7 +23,7 @@ class _ScreenDonState extends State<ScreenDon> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Beneduca"),
+        title: const Text("Faire un don - Beneduca"),
         backgroundColor: Colors.amber,
       ),
       body: SingleChildScrollView(
@@ -44,67 +44,77 @@ class _ScreenDonState extends State<ScreenDon> {
                 ),
               ),
               const SizedBox(
-                height: 20,
-              ),
-              const Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  "Collecte de fonds 2023",
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              StepProgressIndicator(
-                totalSteps: 100,
-                currentStep: 32,
-                size: 20,
-                padding: 0,
-                selectedColor: Colors.yellow,
-                unselectedColor: Colors.black,
-                roundedEdges: Radius.circular(10),
-                selectedGradientColor: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [Colors.yellowAccent, Colors.deepOrange],
-                ),
-                unselectedGradientColor: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [Colors.black, Colors.blue],
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: const Align(
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        "9.000.000 / 30.000.000 FCFA",
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              const Text(
-                  "Le but de cette collecte de fonds est de permettre de pouvoir organiser des concours hebdomadaires portant sur les cours et/ou la culture générale à l'endroit des élèves et étudiants.es durant toute l'année l'année 2023 ; au sortir desquelles les meilleurs seront récompensés."),
-              const Text(
-                "Nous entendons ainsi avec votre concoure redonner le gôut de l'excellence aux élèves et étudiants.es afin de réhausser le système éducatif.",
-              ),
-              const SizedBox(
                 height: 10,
               ),
-              const CallToAction(
-                callToAction: ScreenDonPayment(),
-                txtBtn: "Je participe",
-              ),
+              Card(
+                  margin: EdgeInsets.symmetric(vertical: 0.0, horizontal: 0.0),
+                  color: Colors.white,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        const Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            "Collecte de fonds 2023",
+                            style: TextStyle(
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        StepProgressIndicator(
+                          totalSteps: 100,
+                          currentStep: 32,
+                          size: 20,
+                          padding: 0,
+                          selectedColor: Colors.yellow,
+                          unselectedColor: Colors.black,
+                          roundedEdges: Radius.circular(10),
+                          selectedGradientColor: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [Colors.yellowAccent, Colors.deepOrange],
+                          ),
+                          unselectedGradientColor: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [Colors.black, Colors.blue],
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Expanded(
+                              child: const Align(
+                                alignment: Alignment.topLeft,
+                                child: Text(
+                                  "9.000.000 / 30.000.000 FCFA",
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        const Text(
+                            "Le but de cette collecte de fonds est de permettre de pouvoir organiser des concours hebdomadaires portant sur les cours et/ou la culture générale à l'endroit des élèves et étudiants.es durant toute l'année 2023 ; au sortir desquelles les meilleurs seront récompensés."),
+                        const Text(
+                          "Nous entendons ainsi, avec votre concoure redonner le gôut de l'excellence aux élèves et étudiants.es afin de réhausser le système éducatif.",
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        const CallToAction(
+                          callToAction: ScreenDonPayment(),
+                          txtBtn: "Je participe",
+                        ),
+                      ],
+                    ),
+                  )),
             ],
           ),
         ),

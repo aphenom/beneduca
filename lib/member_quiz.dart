@@ -21,7 +21,7 @@ class _ScreenMemberQuizState extends State<ScreenMemberQuiz> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Beneduca"),
+        title: const Text("Je relève le défi"),
         backgroundColor: Colors.amber,
       ),
       body: SingleChildScrollView(
@@ -41,52 +41,65 @@ class _ScreenMemberQuizState extends State<ScreenMemberQuiz> {
                   ),
                 ),
               ),
-              const Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  "Je relève le défi !",
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
               const SizedBox(
-                height: 25,
+                height: 20,
               ),
-              const Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  "Question 1 : Le lorem ipsum est, en imprimerie ?",
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Form(
-                child: Column(
-                  children: [
-                    Form(
-                      child: Column(
-                        children: [
-                          _reponseField(),
-                          const SizedBox(
-                            height: 10,
+              Card(
+                  margin: EdgeInsets.symmetric(vertical: 0.0, horizontal: 0.0),
+                  color: Colors.white,
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      children: [
+                        const Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            "Je relève le défi !",
+                            style: TextStyle(
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                          const CallToAction(
-                            callToAction: ScreenMember(),
-                            txtBtn: "Valider",
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        const Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            "Question 1 : Le lorem ipsum est, en imprimerie ?",
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ],
-                      ),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Form(
+                          child: Column(
+                            children: [
+                              Form(
+                                child: Column(
+                                  children: [
+                                    _reponseField(),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    const CallToAction(
+                                      callToAction: ScreenMember(),
+                                      txtBtn: "Valider",
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-              ),
+                  )),
               const SizedBox(
                 height: 20,
               ),

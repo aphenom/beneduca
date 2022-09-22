@@ -36,7 +36,7 @@ class _ScreenMemberRecompensesState extends State<ScreenMemberRecompenses>
     return Scaffold(
       appBar: AppBar(
           elevation: 0,
-          title: const Text("Beneduca"),
+          title: const Text("Mes récompenses"),
           backgroundColor: Colors.amber,
           bottom: TabBar(
             controller: _controller,
@@ -49,7 +49,7 @@ class _ScreenMemberRecompensesState extends State<ScreenMemberRecompenses>
                 child: Opacity(
                   opacity: 1,
                   child: Text(
-                    "Gains",
+                    "Mes gains",
                     style: TextStyle(
                       color: Color(0xffF8F9FA),
                       fontSize: 15.0,
@@ -63,7 +63,7 @@ class _ScreenMemberRecompensesState extends State<ScreenMemberRecompenses>
                 child: Opacity(
                   opacity: 1,
                   child: Text(
-                    "Retraits",
+                    "Mes retraits",
                     style: TextStyle(
                       color: Color(0xffF8F9FA),
                       fontSize: 15.0,
@@ -244,20 +244,25 @@ class _ScreenMemberRecompensesState extends State<ScreenMemberRecompenses>
             ) //Padding
                 ), //Container
           ),
-          ListView(
-            restorationId: 'list_demo_list_view',
-            padding: const EdgeInsets.symmetric(vertical: 8),
-            children: [
-              for (int index = 1; index < 4; index++)
-                ListTile(
-                  leading: ExcludeSemantics(
-                    child: CircleAvatar(child: Icon(Icons.payments)),
-                  ),
-                  title: Text('- 5.000 FCFA'),
-                  subtitle: Text("xx-xx-xxxx"),
-                ),
-            ],
-          )
+          Card(
+              margin: EdgeInsets.symmetric(vertical: 0.0, horizontal: 0.0),
+              color: Colors.white,
+              child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: ListView(
+                    restorationId: 'list_demo_list_view',
+                    padding: const EdgeInsets.symmetric(vertical: 8),
+                    children: [
+                      for (int index = 1; index < 4; index++)
+                        ListTile(
+                          leading: ExcludeSemantics(
+                            child: CircleAvatar(child: Icon(Icons.payments)),
+                          ),
+                          title: Text('- 5.000 FCFA'),
+                          subtitle: Text("xx-xx-xxxx"),
+                        ),
+                    ],
+                  ))),
         ],
         controller: _controller,
       ),

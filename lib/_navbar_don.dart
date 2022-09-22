@@ -67,7 +67,7 @@ class NavBar extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.help),
-            title: const Text('Foire à questions'),
+            title: const Text('Foire aux questions'),
             onTap: () {
               // Update the state of the app
               // ...

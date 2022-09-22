@@ -24,7 +24,7 @@ class _ScreenMemberProfileState extends State<ScreenMemberProfile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Beneduca"),
+        title: const Text("Mon profil"),
         backgroundColor: Colors.amber,
       ),
       body: ListView(

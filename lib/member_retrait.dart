@@ -21,7 +21,7 @@ class _ScreenMemberRetraitState extends State<ScreenMemberRetrait> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Beneduca"),
+        title: const Text("Effectuer un retrait"),
         backgroundColor: Colors.amber,
       ),
       body: SingleChildScrollView(
@@ -29,43 +29,53 @@ class _ScreenMemberRetraitState extends State<ScreenMemberRetrait> {
           padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 20),
           child: Column(
             children: [
-              const Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  "Effectuer un retrait",
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 25,
-              ),
-              Form(
-                child: Column(
-                  children: [
-                    Form(
-                      child: Column(
-                        children: [
-                          _contactField(),
-                          const SizedBox(
-                            height: 10,
+              Card(
+                  margin: EdgeInsets.symmetric(vertical: 0.0, horizontal: 0.0),
+                  color: Colors.white,
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      children: [
+                        const Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            "Effectuer un retrait",
+                            style: TextStyle(
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                          _montantField(),
-                          const SizedBox(
-                            height: 10,
+                        ),
+                        const SizedBox(
+                          height: 25,
+                        ),
+                        Form(
+                          child: Column(
+                            children: [
+                              Form(
+                                child: Column(
+                                  children: [
+                                    _contactField(),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    _montantField(),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    const CallToAction(
+                                      callToAction: ScreenMember(),
+                                      txtBtn: "Valider",
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
-                          const CallToAction(
-                            callToAction: ScreenMember(),
-                            txtBtn: "Valider",
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-              ),
+                  )),
               const SizedBox(
                 height: 20,
               ),

@@ -24,7 +24,7 @@ class _ScreenDonAssistanceState extends State<ScreenDonAssistance> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Beneduca"),
+        title: const Text("Assistance"),
         backgroundColor: Colors.amber,
       ),
       body: SingleChildScrollView(
@@ -47,76 +47,109 @@ class _ScreenDonAssistanceState extends State<ScreenDonAssistance> {
               const SizedBox(
                 height: 20,
               ),
-              const Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  "Nous contacer",
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              const Text(
-                  "Veuillez utiliser le formulaire ci-dessous pour nous envoyer un message"),
-              const SizedBox(
-                height: 5,
-              ),
-              Form(
-                child: Column(
-                  children: [
-                    Form(
-                      child: Column(
-                        children: [
-                          _nomField(),
-                          const SizedBox(
-                            height: 10,
+              Card(
+                  margin: EdgeInsets.symmetric(vertical: 0.0, horizontal: 0.0),
+                  color: Colors.white,
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      children: [
+                        const Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            "Nous contacer",
+                            style: TextStyle(
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                          _contactField(),
-                          const SizedBox(
-                            height: 10,
+                        ),
+                        const Text(
+                            "Veuillez utiliser le formulaire ci-dessous pour nous envoyer un message"),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        Form(
+                          child: Column(
+                            children: [
+                              Form(
+                                child: Column(
+                                  children: [
+                                    _nomField(),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    _contactField(),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    _objetField(),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    _messageField(),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    const CallToAction(
+                                      callToAction: ScreenDon(),
+                                      txtBtn: "Envoyer",
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
-                          _objetField(),
-                          const SizedBox(
-                            height: 10,
+                        ),
+                        const SizedBox(
+                          height: 25,
+                        ),
+                        const Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            "Service commercial :",
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                          _messageField(),
-                          const SizedBox(
-                            height: 10,
+                        ),
+                        const Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            "+225 0505010203",
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                          const CallToAction(
-                            callToAction: ScreenDon(),
-                            txtBtn: "Envoyer",
+                        ),
+                        const SizedBox(
+                          height: 15,
+                        ),
+                        const Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            "Service technique :",
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ],
-                      ),
+                        ),
+                        const Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            "+225 0505040506",
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-              ),
-              const SizedBox(
-                height: 25,
-              ),
-              const Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  "Service commercial : +225 0505010203",
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              const Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  "Service technique : +225 0505040506",
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
+                  )),
             ],
           ),
         ),

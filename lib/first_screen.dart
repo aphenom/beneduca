@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:intl/intl.dart';
 //import 'package:no_name_app/home.dart';
 import 'package:beneduca/leading_card.dart';
 import 'package:beneduca/screen_two.dart';
@@ -49,12 +50,8 @@ class _FirstScreenState extends State<FirstScreen> {
               height: 10,
             ),
             Flexible(
-                child: _test(
-                    'assets/imgs/first_screen_students.jpg',
-                    'Je relève le défi de l’excellence !',
-                    "Elève - Etudiant.e",
-                    'star',
-                    const ScreenTwo())),
+                child: _test('assets/imgs/first_screen_students.jpg', '',
+                    "Elève - Etudiant.e", 'star', const ScreenTwo())),
             //"assets/imgs/first_screen_students.jpg", const ScreenTwo()))
           ],
         ),
@@ -147,8 +144,10 @@ class _FirstScreenState extends State<FirstScreen> {
                               color: Colors.black))
                     ],
                   ),
-                  decoration:
-                      BoxDecoration(color: Colors.white.withOpacity(0.7)),
+                  decoration: BoxDecoration(
+                      color: _label != ""
+                          ? Colors.white.withOpacity(0.7)
+                          : Colors.white.withOpacity(0)),
                   padding: EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 8.0),
                 ),
                 right: 0.0,

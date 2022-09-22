@@ -21,7 +21,7 @@ class _ScreenDonPaymentState extends State<ScreenDonPayment> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Beneduca"),
+        title: const Text("J'effectue un don"),
         backgroundColor: Colors.amber,
       ),
       body: SingleChildScrollView(
@@ -41,39 +41,52 @@ class _ScreenDonPaymentState extends State<ScreenDonPayment> {
                   ),
                 ),
               ),
-              const Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  "J'effectue un don",
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              const SizedBox(
+              SizedBox(
                 height: 10,
               ),
-              Form(
-                child: Column(
-                  children: [
-                    Form(
-                      child: Column(
-                        children: [
-                          _montantField(),
-                          const SizedBox(
-                            height: 10,
+              Card(
+                  margin: EdgeInsets.symmetric(vertical: 0.0, horizontal: 0.0),
+                  color: Colors.white,
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      children: [
+                        const Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            "J'effectue un don",
+                            style: TextStyle(
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                          const CallToAction(
-                            callToAction: ScreenDon(),
-                            txtBtn: "Payer",
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Form(
+                          child: Column(
+                            children: [
+                              Form(
+                                child: Column(
+                                  children: [
+                                    _montantField(),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    const CallToAction(
+                                      callToAction: ScreenDon(),
+                                      txtBtn: "Payer",
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-              ),
+                  )),
               const SizedBox(
                 height: 20,
               ),
